@@ -1,31 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Student Records</title>
-  </head>
-  <body class="">
-    <nav class="">
-      <div class="container-fluid">
-         Student Records
-        <button>
-        </button>
-        <div class="">
-          <ul class="">
-            <li class="">
-              All Students
-            </li>
-            <li class="">
-              Add Student
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div class="">
-    </div>
-    <footer class="">
-      <div class=""> 
-      </div>
-    </footer>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Records</title>
+</head>
+
+<body>
+  <h1>{{ student.first_name}} {{student.last_name}}</h1>
+  <p>Age: {{ student.age }}</p>
+  <p>Email: {{ student.email }}</p>
+  <p>Phone: {{ studnet.phone }}</p>
+  <p>Location: {{ student.location }}</p>
+  <p>Hobby: {{ student.hobby }}</p>
+</body>
+
 </html>
