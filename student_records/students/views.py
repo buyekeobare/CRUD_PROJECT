@@ -9,9 +9,9 @@ def index(request):
     return render(request, 'students/index.html', {'students': students})
 
 # Get student information
-def student_info(request, pk):  # pk (primary key; a unique identifier for students)
+def detail_student(request, pk):  # pk (primary key; a unique identifier for students)
     student = get_object_or_404(Student, pk=pk)
-    return render(request, 'students/info.html', {'student': student})
+    return render(request, 'students/deatil.html', {'student': student})
 
 # Create a new student
 def create_student(request):

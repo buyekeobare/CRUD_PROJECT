@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Student Details</title>
+</head>
+
+<body>
+  <h1>Student Details</h1>
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <td>{{ student.name }}</td>
+    </tr>
+    <tr>
+      <th>Age</th>
+      <td>{{ student.age }}</td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td>{{ student.email }}</td>
+    </tr>
+    <tr>
+      <th>Phone</th>
+      <td>{{ student.phone }}</td>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <td>{{ student.location }}</td>
+    </tr>
+    <tr>
+      <th>Hobby</th>
+      <td>{{ student.hobby }}</td>
+    </tr>
+  </table>
+  <a href="{% url 'index' %}">Back to Student List</a> |
+  <a href="{% url 'update_update' student.pk %}">Edit</a> |
+  <a href="{% url 'confirm_delete' student.pk %}">Delete</a>
+</body>
+
+</html>

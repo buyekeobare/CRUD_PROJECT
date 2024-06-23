@@ -6,7 +6,8 @@
 </head>
 
 <body>
-  <h1>Are you sure you want to delete "{{ student.name }}"?</h1>
+  <h1>Delete Student</h1>
+  <p>Are you sure you want to delete "{{ student.name }}"?</p>
   <form method="post">
     {% csrf_token %}
     <button type="submit">Delete</button>
