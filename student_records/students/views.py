@@ -14,7 +14,7 @@ def student_info(request, pk):  # pk (primary key; a unique identifier for stude
     return render(request, 'students/info.html', {'student': student})
 
 # Create a new student
-def student_create(request):
+def create_student(request):
     if request.method == "POST":
         form = StudentForm(request.POST)
         if form.is_valid():
@@ -25,7 +25,7 @@ def student_create(request):
     return render(request, 'students/form.html', {'form': form})
 
 # Update an existing student information 
-def student_update(request, pk):
+def update_student(request, pk):
     student = get_object_or_404(Student, pk=pk)
     if request.method == "POST":
         form = StudentForm(request.POST, instance=student)
@@ -37,7 +37,7 @@ def student_update(request, pk):
     return render(request, 'students/form.html', {'form': form})
 
 # Deleete and existing student information
-def student_delete(request, pk):
+def confirm_delete(request, pk):
     student = get_object_or_404(Student, pk=pk)
     if request.method == "POST":
         student.delete()
