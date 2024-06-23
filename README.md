@@ -1,6 +1,14 @@
 # CRUD PROJECT
 
-student records
+This is a CRUD Project on student management system built using **Django 4** and **HTML 5**
+
+## Table of Contents
+
+- [Objectives](#objectives)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Run the application](#run-the-application)
+- [View the application](#view-the-application)
 
 ## Objectives
 
@@ -8,50 +16,132 @@ student records
 - No need to style.
 - Just create a simple table.
 
-## Requirements
+### Prerequisites
 
-- A Student model with fields for:
+Install the following prerequisites:
 
-1.  Name
-2.  Age
-3.  Email
-4.  Phone
-5.  Location
-6.  Hobby
-7.  Actions.
+1. [Python 3.8-3.11](https://www.python.org/downloads/)
+   <br> This project uses **Django v4.2.4**. For Django to work, you must install a correct version of Python on your machine. More information [here](https://django.readthedocs.io/en/stable/faq/install.html).
+2. [Visual Studio Code](https://code.visualstudio.com/download)
 
-- CRUD views to:
+### Installation
 
-1.  Create
-2.  Read
-3.  Update
-4.  Delete
+#### 1. Create a virtual environment
 
-## Usage:
+From the **root** directory, run:
 
-- To create a Django web application that allows you to perform CRUD operations for managing student records, follow these steps:
+```bash
+python -m venv venv
+```
 
-1. Set Up Django Project and App:
+#### 2. Activate the virtual environment
 
-- Create a new Django project.
-- Create a new Django app within the project.
+From the **root** directory, run:
 
-2.  Define the Student Model:
+On macOS:
 
-- Create a model for the Student with the required fields.
+```bash
+source env/bin/activate
+```
 
-3. Create the Database Migrations:
+On Windows:
 
-- Generate and apply the migrations to create the database schema.
+```bash
+env\scripts\activate
+```
 
-4.  Create CRUD Views:
+#### 3. Install django
 
-- Define views to handle creating, reading, updating, and deleting student records.
+From the **root** directory, run:
 
-5.  Create URLs:
+```bash
+pip pip install django
+```
 
-- Map the views to URL patterns.
+#### 4. Start a new Project
 
-6. Create Templates:
+From the **root** directory, run:
 
-- Create simple templates for each of the CRUD operations.
+```bash
+django-admin startproject student_records
+```
+
+#### 5. Ceate django app
+
+From the **root** directory, run:
+
+```bash
+cd student_records
+```
+
+```bash
+python manage.py startapp students
+```
+
+#### 6. Add the App to Installed Apps:
+
+- In students_records/settings.py, add 'students' to the INSTALLED_APPS list.
+  ![Apps](https://github.com/buyekeobare/CRUD_PROJECT/blob/main/student_records/student_records/settings.py)
+
+#### 7. Define the Student Model
+
+- Edit students/models.py
+  ![Apps](https://github.com/buyekeobare/CRUD_PROJECT/blob/main/student_records/students/models.py)
+
+#### 8. Run migrations
+
+From the **root** directory, run:
+
+```bash
+python manage.py makemigrations
+```
+
+```bash
+python manage.py migrate
+```
+
+#### 9. Create an admin user to access the Django Admin interface
+
+From the **root** directory, run:
+
+```bash
+python manage.py createsuperuser
+```
+
+When prompted, enter a username, email, and password.
+
+#### 10. Create CRUD Views
+
+- Edit students/views.py to add views for each CRUD operation
+
+![views](https://github.com/buyekeobare/CRUD_PROJECT/blob/main/student_records/students/views.py)
+
+#### 11. Create URLs
+
+- Edit students/urls.py and define URL patterns
+  ![Students urls](https://github.com/buyekeobare/CRUD_PROJECT/blob/main/student_records/students/urls.py)
+
+- Include the app URLs in the main project urls.py
+  ![Main urls](https://github.com/buyekeobare/CRUD_PROJECT/blob/main/student_records/student_records/urls.py)
+
+#### 12. Create Templates
+
+- Create simple templates for each view
+  ![Templates](https://github.com/buyekeobare/CRUD_PROJECT/tree/main/student_records/students/templates/students)
+
+#### 13. Create a StudentForm
+
+- Create a form for the Student model in students/forms.py
+  ![StudentForm](https://github.com/buyekeobare/CRUD_PROJECT/blob/main/student_records/students/forms.py)
+
+### Run the application
+
+From the **root** directory, run:
+
+```bash
+python manage.py runserver
+```
+
+### View the application
+
+Go to http://127.0.0.1:8000/ to view the application.
