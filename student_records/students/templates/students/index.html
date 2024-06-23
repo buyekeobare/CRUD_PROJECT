@@ -1,21 +1,24 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Records</title>
+  <title>Student List</title>
 </head>
 
 <body>
-  <h1>{{ student.first_name}} {{student.last_name}}</h1>
-  <p>Age: {{ student.age }}</p>
-  <p>Email: {{ student.email }}</p>
-  <p>Phone: {{ studnet.phone }}</p>
-  <p>Location: {{ student.location }}</p>
-  <p>Hobby: {{ student.hobby }}</p>
+  <h1>Student List</h1>
+  <a href="{% url 'create_student' %}">Add New Student</a>
+  <ul>
+    {% for student in students %}
+    <li>
+      {{ student.name }} - {{ student.age }} - {{ student.email }} - {{ student.phone }} - {{ student.location }} - {{
+      student.hobby }}
+      <a href="{% url 'update_student' student.pk %}">Edit</a>
+      <a href="{% url 'confirm_delete' student.pk %}">Delete</a>
+    </li>
+    {% endfor %}
+  </ul>
 </body>
 
 </html>
+
